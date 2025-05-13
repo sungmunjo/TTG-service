@@ -1,4 +1,13 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/
+    url: jdbc:postgresql://localhost:5432/ttg_database
+    username: dbadmin
+    password: dbmanager
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
