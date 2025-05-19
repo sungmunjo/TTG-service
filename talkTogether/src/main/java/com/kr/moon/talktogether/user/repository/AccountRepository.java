@@ -1,9 +1,9 @@
-package com.kr.moon.talktogether.repository;
+package com.kr.moon.talktogether.user.repository;
 
 import com.kr.moon.talktogether.entity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AccountRepository extends JpaRepository<Account, String> {
+public interface AccountRepository extends JpaRepository<Account, Long> {
 
-    public Account findAccountByUsernameContainingIgnoreCase(String username);
+    public Account findAccountByUserNameContainingIgnoreCase(String username);
 }

@@ -1,3 +1,3 @@
 package com.kr.moon.talktogether.auth.model;
 
-public record LoginRequest(String email, String password) { }
+public record LoginRequest(String userEmail, String password) { }

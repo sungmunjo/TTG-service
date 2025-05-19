@@ -1,39 +1,41 @@
-package com.kr.moon.talktogether.entity;
+package com.kr.moon.talktogether.user.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class Account {
-
+@Table(name = "users")
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
     private String userEmail;
 
+    @Column(name="password")
     private String password;
-
-    @Column(length = 11)
-    private String phoneNumber;
 
     private String userName;
 
+    @Column(name="role")
     private String role;
+
+    @Column(length = 11)
+    private String phoneNumber;
 
     private String address;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
 
-
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
 
-    public Account() {
-
-    }
 
     public Long getUserId() {
         return userId;
@@ -107,9 +109,6 @@ public class Account {
         this.updateTime = updateTime;
     }
 
-    public Account(String userEmail, String password, String role) {
-        this.userEmail = userEmail;
-        this.password = password;
-        this.role = role;
-    }
+
+
 }

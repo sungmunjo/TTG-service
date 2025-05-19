@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TTG-service.iml" filepath="$PROJECT_DIR$/.idea/TTG-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/talkTogether.main.iml" filepath="$PROJECT_DIR$/.idea/modules/talkTogether.main.iml" />
     </modules>
   </component>
 </project>

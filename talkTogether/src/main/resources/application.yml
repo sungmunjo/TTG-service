@@ -1,3 +1,5 @@
+server:
+  port: 20301
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -6,8 +8,21 @@ spring:
     password: dbmanager
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+      format_sql: true
     show-sql: true
     properties:
       hibernate:
+        default_schema: ttg_service
         format_sql: true
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+jwt:
+  secret: etSit/ixkWVvFwre069WTKlRnEQn4PDrrd8qfnMcAuogsocH0X/8tRXhY2ved8GKDIekK1jIs027OfaoUQlY7Q==
