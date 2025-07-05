@@ -8,4 +8,5 @@ public class UserInfoSaveUserInfoIn {
     private String name;
     private String userEmail;
     private String password;
+    private boolean isAdmin = false;
 }

@@ -18,6 +18,7 @@ public class UserInfoSaveUserInfo {
         user.setUserEmail(input.getUserEmail());
         user.setUserName(input.getName());
         user.setPassword(input.getPassword());
+        user.setRole(input.isAdmin() ? "ADMIN" : "CUSTOMER");
         usersRepository.save(user);
 
         output.setUserInfo(user);

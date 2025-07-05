@@ -3,6 +3,8 @@ package com.kr.moon.talktogether.user.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.util.Date;
 
@@ -31,9 +33,11 @@ public class Users {
     private String address;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @CreatedDate
     private Date createTime;
 
     @Temporal(TemporalType.TIMESTAMP)
+    @LastModifiedDate
     private Date updateTime;
 
 
