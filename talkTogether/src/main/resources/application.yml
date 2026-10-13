@@ -3,9 +3,9 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/ttg_database
-    username: dbadmin
-    password: dbmanager
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/ttg_database}
+    username: ${DB_USERNAME:dbadmin}
+    password: ${DB_PASSWORD:dbmanager}
   jpa:
     hibernate:
       ddl-auto: update
@@ -25,4 +25,4 @@ logging:
             sql:
               BasicBinder: TRACE
 jwt:
-  secret: etSit/ixkWVvFwre069WTKlRnEQn4PDrrd8qfnMcAuogsocH0X/8tRXhY2ved8GKDIekK1jIs027OfaoUQlY7Q==
+  secret: ${JWT_SECRET}
