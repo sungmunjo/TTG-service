@@ -2,6 +2,7 @@ package com.kr.moon.talktogether.auth.model;
 
 import com.kr.moon.talktogether.user.entity.Users;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -17,8 +18,10 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(() -> user.getRole());
+        return List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole()));
     }
+
+    public Users getUser() { return user; }
 
     @Override
     public String getPassword() {

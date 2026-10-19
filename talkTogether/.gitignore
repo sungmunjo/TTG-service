@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+claude_image/
+.gradle/
+build/
+out/
+.idea/
+*.iml
+!gradle/wrapper/gradle-wrapper.jar

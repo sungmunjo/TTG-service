@@ -13,4 +13,11 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="talkTogether" options="-parameters" />
+      <module name="talkTogether.main" options="-parameters" />
+      <module name="talkTogether.test" options="-parameters" />
+    </option>
+  </component>
 </project>
