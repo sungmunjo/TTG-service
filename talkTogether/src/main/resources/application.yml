@@ -30,6 +30,6 @@ jwt:
   refresh-token-expiration: ${JWT_REFRESH_EXP:1209600000}
 storage:
   endpoint: ${STORAGE_ENDPOINT:http://localhost:9000}
-  access-key: ${STORAGE_ACCESS_KEY:}
-  secret-key: ${STORAGE_SECRET_KEY:}
+  access-key: ${STORAGE_ACCESS_KEY:minioadmin}
+  secret-key: ${STORAGE_SECRET_KEY:minioadmin}
   bucket: ${STORAGE_BUCKET:ttg}
