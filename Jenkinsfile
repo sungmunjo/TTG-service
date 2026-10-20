@@ -50,12 +50,12 @@ pipeline {
                     sh '''
                         SSH="ssh -o StrictHostKeyChecking=accept-new ubuntu@$APP_HOST"
                         # compose/nginx 설정도 저장소에서 관리하므로 매번 같이 올린다 (.env 는 서버에만 있음)
-                        scp -o StrictHostKeyChecking=accept-new -r deploy/docker-compose.yml deploy/nginx deploy/init-db ubuntu@$APP_HOST:$DEPLOY_DIR/
+                        scp -o StrictHostKeyChecking=accept-new -r deploy/docker-compose.yml deploy/nginx ubuntu@$APP_HOST:$DEPLOY_DIR/
                         $SSH "cd $DEPLOY_DIR \
                           && sed -i 's/^API_TAG=.*/API_TAG=$TAG/' .env \
                           && aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY \
                           && docker compose pull api \
-                          && docker compose up -d \
+                          && docker compose up -d --remove-orphans \
                           && docker image prune -f"
                     '''
                 }
