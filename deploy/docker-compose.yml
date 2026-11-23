@@ -10,6 +10,12 @@ services:
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
       JWT_SECRET: ${JWT_SECRET}
+      # 업로드 파일은 S3 버킷에 저장한다. 키는 비워두면 앱 서버의 IAM 역할(ttg-app-role)로 접속한다
+      STORAGE_ENDPOINT: https://s3.us-east-1.amazonaws.com
+      STORAGE_REGION: us-east-1
+      STORAGE_BUCKET: ${STORAGE_BUCKET:?STORAGE_BUCKET is not set in .env}
+      STORAGE_ACCESS_KEY: ""
+      STORAGE_SECRET_KEY: ""
 
   ui:
     image: ${ECR_REGISTRY}/ttg-ui:${UI_TAG}
